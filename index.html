@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#030511">
+  <title>For My Queen 💙</title>
+  <style>
+    :root { --blue:#43baff; --glow:#168dff; --pink:#ff5da2; }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; min-height:100vh; overflow-x:hidden; color:#fff;
+      background: radial-gradient(ellipse at 50% 45%, #071a3b 0%, #030817 43%, #010207 100%);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    #stars { position:fixed; inset:0; width:100%; height:100%; z-index:0; }
+    .aurora { position:fixed; inset:-30%; z-index:0; pointer-events:none; opacity:.28;
+      background: conic-gradient(from 0deg, transparent, #006bff22, transparent, #00d9ff22, transparent);
+      filter:blur(60px); animation: spin 24s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    main { position:relative; z-index:1; min-height:100vh; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; padding:34px 16px 48px; text-align:center; }
+    .eyebrow { color:#9bdcff; letter-spacing:.28em; text-transform:uppercase; font: 11px/1.6 Arial,sans-serif; }
+    h1 { margin:9px 0 4px; font-size:clamp(2.2rem, 8vw, 4.7rem); font-weight:normal;
+      color:#d9f5ff; text-shadow:0 0 8px #5bbcff, 0 0 25px #148dff, 0 0 55px #087bff; }
+    .subtitle { color:#a8c8f7; margin:0 0 8px; font-size:clamp(1rem,3vw,1.2rem); }
+    .heart-wrap { width:min(88vw,440px); height:min(88vw,390px); max-height:390px; position:relative;
+      display:grid; place-items:center; margin:2px 0 2px; }
+    canvas#heart { width:100%; height:100%; filter:drop-shadow(0 0 12px #078cff); }
+    .heart-label { position:absolute; top:50%; left:50%; transform:translate(-50%,-25%);
+      color:#effbff; font-size:clamp(1rem,4vw,1.6rem); text-shadow:0 0 9px #29aaff,0 0 22px #168dff;
+      pointer-events:none; white-space:nowrap; }
+    .platform { width:155px; height:19px; margin-top:-5px; border-radius:50%;
+      background:radial-gradient(ellipse,#a8f5ff 0%,#238eff 32%,#0751ff55 62%,transparent 75%);
+      box-shadow:0 0 15px #0b83ff,0 0 35px #006dff; animation:pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 50% { transform:scaleX(1.18); opacity:.7; } }
+    .intro { max-width:620px; margin:22px auto 18px; color:#d5e8ff; font-size:1.08rem; line-height:1.7; }
+    button { border:1px solid #7bd6ff; border-radius:999px; padding:13px 24px; cursor:pointer;
+      color:#fff; background:linear-gradient(135deg,#086dce,#5a42d8); font-weight:bold; letter-spacing:.04em;
+      box-shadow:0 0 16px #168dff70; transition:transform .2s, box-shadow .2s; }
+    button:hover { transform:translateY(-2px); box-shadow:0 0 26px #168dffb0; }
+    .letter { display:none; max-width:650px; width:100%; margin:22px auto 0; padding:25px 23px;
+      border:1px solid #55baff66; border-radius:18px; text-align:left; line-height:1.85;
+      color:#eaf6ff; background:linear-gradient(145deg,#071a32eF,#0a0925eF);
+      box-shadow:0 0 32px #087bff25; animation:appear .8s ease both; }
+    .letter.show { display:block; }
+    .letter h2 { text-align:center; font-size:1.6rem; color:#b9eaff; text-shadow:0 0 15px #168dff; }
+    .signature { text-align:right; color:#8bd7ff; font-style:italic; font-size:1.15rem; }
+    .hint { color:#7198c7; font:12px Arial,sans-serif; margin-top:24px; }
+    @keyframes appear { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms!important; } }
+  </style>
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas><div class="aurora"></div>
+  <main>
+    <div class="eyebrow">A little universe, made for you</div>
+    <h1>I Love You</h1>
+    <p class="subtitle">My Queen 💙</p>
+    <div class="heart-wrap">
+      <canvas id="heart" aria-label="A glowing blue particle heart"></canvas>
+      <div class="heart-label">Forever Yours</div>
+    </div>
+    <div class="platform"></div>
+    <p class="intro">If I could gather every star in the sky, I would still choose the light in your eyes. This little heart is just a tiny way to show you how much you mean to me.</p>
+    <button id="openLetter" type="button">Open your love letter 💌</button>
+    <article class="letter" id="letter">
+      <h2>To My Queen, My Love 💙</h2>
+      <p>My Queen,</p>
+      <p>Sometimes I wonder how I got so lucky to have someone as special as you in my life. You bring warmth to my days, peace to my heart, and a kind of happiness that words can never fully explain.</p>
+      <p>Your smile can turn an ordinary moment into a beautiful memory. Even when we're apart, you stay close to my heart, and I find myself thinking about you in the smallest moments of my day.</p>
+      <p>I can't promise that every day will be perfect, but I can promise to keep choosing you, to listen to you, to respect you, to support your dreams, and to remind you that you are loved. You deserve tenderness, honesty, laughter, and a love that keeps growing.</p>
+      <p>Thank you for being you. If my heart could speak in a thousand voices, every one of them would say the same thing: <strong>I love you, my Queen.</strong> Today, tomorrow, and through all the little adventures still waiting for us.</p>
+      <p class="signature">Forever yours,<br>Your King 💙</p>
+    </article>
+    <div class="hint">Made with love, just for you ✨</div>
+  </main>
+  <script>
+    // Starry background
+    const starCanvas = document.getElementById('stars');
+    const sctx = starCanvas.getContext('2d');
+    let stars = [];
+    function resizeStars() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      starCanvas.width = innerWidth * dpr; starCanvas.height = innerHeight * dpr;
+      starCanvas.style.width = innerWidth + 'px'; starCanvas.style.height = innerHeight + 'px';
+      sctx.setTransform(dpr,0,0,dpr,0,0);
+      stars = Array.from({length: Math.min(190, Math.floor(innerWidth * innerHeight / 5500))}, () => ({
+        x:Math.random()*innerWidth, y:Math.random()*innerHeight, r:Math.random()*1.5+.25,
+        a:Math.random()*.7+.15, speed:Math.random()*.012+.003
+      }));
+    }
+    function drawStars(t) {
+      sctx.clearRect(0,0,innerWidth,innerHeight);
+      for (const s of stars) {
+        sctx.beginPath(); sctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+        sctx.fillStyle = `rgba(120,190,255,${s.a*(.6+.4*Math.sin(t*s.speed))})`; sctx.fill();
+      }
+      requestAnimationFrame(drawStars);
+    }
+    resizeStars(); window.addEventListener('resize',resizeStars); requestAnimationFrame(drawStars);
+
+    // Glowing blue particle heart
+    const canvas = document.getElementById('heart'), ctx = canvas.getContext('2d');
+    let points = [], cw = 0, ch = 0;
+    function heartPoint(t) {
+      return { x:16*Math.pow(Math.sin(t),3),
+        y:-(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t)) };
+    }
+    function setupHeart() {
+      const rect=canvas.getBoundingClientRect(), dpr=Math.min(devicePixelRatio||1,2);
+      canvas.width=rect.width*dpr; canvas.height=rect.height*dpr; cw=rect.width; ch=rect.height;
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      points=[];
+      const scale=Math.min(cw/38,ch/35)*.92;
+      for(let i=0;i<1700;i++){
+        const t=Math.random()*Math.PI*2, p=heartPoint(t);
+        const fill=Math.sqrt(Math.random());
+        points.push({x:cw/2+p.x*scale*fill,y:ch/2+p.y*scale*fill,
+          baseX:cw/2+p.x*scale*fill,baseY:ch/2+p.y*scale*fill,
+          r:Math.random()*1.45+.35, phase:Math.random()*6.28, drift:Math.random()*1.8+.3});
+      }
+    }
+    function drawHeart(time) {
+      ctx.clearRect(0,0,cw,ch);
+      const beat=1+Math.sin(time*.0025)*.035;
+      for(const p of points){
+        const x=cw/2+(p.baseX-cw/2)*beat+Math.sin(time*.001+p.phase)*p.drift;
+        const y=ch/2+(p.baseY-ch/2)*beat+Math.cos(time*.0013+p.phase)*p.drift;
+        ctx.beginPath();ctx.arc(x,y,p.r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(${90+Math.floor(Math.random()*70)},${180+Math.floor(Math.random()*60)},255,${.45+Math.random()*.5})`;
+        ctx.shadowBlur=7;ctx.shadowColor='#159bff';ctx.fill();
+      }
+      ctx.shadowBlur=0; requestAnimationFrame(drawHeart);
+    }
+    setupHeart(); window.addEventListener('resize',setupHeart); requestAnimationFrame(drawHeart);
+
+    document.getElementById('openLetter').addEventListener('click',()=>{
+      const letter=document.getElementById('letter');
+      letter.classList.toggle('show');
+      document.getElementById('openLetter').textContent=letter.classList.contains('show')?'Close your love letter 💙':'Open your love letter 💌';
+      if(letter.classList.contains('show')) letter.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  </script>
+</body>
+</html>
